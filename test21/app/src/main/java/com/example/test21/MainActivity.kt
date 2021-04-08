@@ -5,6 +5,11 @@ import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
 
+    //초기화 : 전역변수에서 쓰려며 반드시 초기화 필요
+    //val a: Int = 1
+    //var b = 2
+    //var b : Int => 에러
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,8 +34,52 @@ class MainActivity : AppCompatActivity() {
         //sum(3,4)
         //1. 코틀린 함수사용 end --------------------------------------------
 
+        //2. 코틀린  변수사용 start ------
+        //val a: Int  => 한번 대입하면 재입력 불가
+        //var b: Int  => 다시 재입력 가능
+        //a = 1
+        //a = 2 => 에러
+        //b = 1
+        //b = 2
+
+        //초기화
+        val a: Int = 1
+        var b = 2  // int 값을 넣으면 굳이 Int 명시 안해도 됨
+
+        //val 값변경
+        val str =  "코로나 조심하세요"
+        //val str2 = str.replace("조심하세요","이겨내요") // str2에 코로나 이겨내요가 들어감
+        //val str2 = "${str.replace("조심하세요","이겨내요")}!!" // 코로나 이겨내요!! 로 출력
+//        val str2 = str.replace("조심하세요","이겨내요") + "!!" // 코로나 이겨내요!! 가 출력
+//        println(str2)
+        //2. 코틀린  변수사용 end ------
+
+        //3. 코틀린 함수전달/리턴
+//        maxof(3,4)
 
 
+    }
+
+    //3. 코틀린 함수전달/리턴
+    //3.1) full
+    /*fun maxof(a: Int, b: Int) : Int {
+        if (a > b) {
+            return a
+        } else {
+            return b
+        }
+    }*/
+    //3.2 short
+    /*fun maxof(a: Int, b: Int) : Int {
+        if (a > b)  return a
+        else return b
+    }*/
+    //3.3 superShort
+    /*fun maxof(a: Int, b: Int) = if(a > b) a else b
+    }*/
+
+    fun parseInt(str :  String) : Int {
+        isnull // 
     }
 
     //1. 코틀린 함수사용 start --------------------------------------------
@@ -56,6 +105,8 @@ class MainActivity : AppCompatActivity() {
     //    println("$a 와 $b 의 합은 ${a+b}")
     //}
     //2021-04-07 19:19:20.372 15439-15439/com.example.test21 I/System.out: 3 와 4 의 합은 7
-
     // 1. 코틀린 함수사용 end ---------------------------------------------------------------------
+
+
+
 }
