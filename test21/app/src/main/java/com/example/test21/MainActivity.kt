@@ -121,6 +121,71 @@ class MainActivity : AppCompatActivity() {
         2021-04-10 20:02:05.302 18357-18357/com.example.test21 I/System.out: Long
         2021-04-10 20:02:05.302 18357-18357/com.example.test21 I/System.out: Not a String
         2021-04-10 20:02:05.302 18357-18357/com.example.test21 I/System.out: Unknown*/
+
+        // 7.1 in .. 사용1
+        /*val x = 100
+        val y = 9
+        if( x in 1..y+1) { //x가 1~y+1에 속해있다면
+            println("범위 안")
+        }
+        if( x in 1..y+1) { //x가 1~y+1에 속해있다는 의미.  X >=1 && x <= y+1 과 같다
+            println("범위 안")
+        }
+
+        val list = listOf("a", "b", "c")  // 참조할 때는 list[0]형태로
+
+        if (-1 !in 0..list.lastIndex) { //list index 범위에 -1이 없냐는 의미
+            println("-1은 범위 안에 없다")
+        }
+        if ( list.size !in list.indices) { //list.indices는 리스트형식임. 0 1 2  , list size는 3
+            println("리스트 인덱스 넘어갔다다")
+        }*/
+//        2021-04-11 14:55:19.267 19040-19040/com.example.test21 I/System.out: -1은 범위 안에 없다
+//        2021-04-11 14:55:19.267 19040-19040/com.example.test21 I/System.out: 리스트 인덱스 넘어갔다다
+
+        //7.2 in .. 사용2 for문
+        /*for ( x in 1..5) {//for문에서도 사용가능
+            println(x)
+        }*/
+        /*2021-04-11 14:57:26.057 19358-19358/com.example.test21 I/System.out: 1
+        2021-04-11 14:57:26.057 19358-19358/com.example.test21 I/System.out: 2
+        2021-04-11 14:57:26.057 19358-19358/com.example.test21 I/System.out: 3
+        2021-04-11 14:57:26.057 19358-19358/com.example.test21 I/System.out: 4
+        2021-04-11 14:57:26.057 19358-19358/com.example.test21 I/System.out: 5*/
+
+        /*for (x in 1..10 step 2) { // step  2칸씩 뛰어서 출력 1 3 5 7 9
+            println(x)
+        }*/
+        /*        2021-04-11 14:59:49.235 19481-19481/com.example.test21 I/System.out: 1
+        2021-04-11 14:59:49.235 19481-19481/com.example.test21 I/System.out: 3
+        2021-04-11 14:59:49.235 19481-19481/com.example.test21 I/System.out: 5
+        2021-04-11 14:59:49.235 19481-19481/com.example.test21 I/System.out: 7
+        2021-04-11 14:59:49.235 19481-19481/com.example.test21 I/System.out: 9*/
+
+        /*println("  ")
+        for (x in 9 downTo 0 step 3) {  //downTo는 거꾸로 출력 ..을 쓰면 출력되지 않음, step은 해당 수만큼 건너뛰기
+            println(x)
+        }*/
+        /*2021-04-11 14:59:49.235 19481-19481/com.example.test21 I/System.out: 9
+        2021-04-11 14:59:49.235 19481-19481/com.example.test21 I/System.out: 6
+        2021-04-11 14:59:49.235 19481-19481/com.example.test21 I/System.out: 3
+        2021-04-11 14:59:49.235 19481-19481/com.example.test21 I/System.out: 0*/
+
+        //8. list setOf와 when
+        val items = setOf("apple", "banana", "kiwifruit")  // listOf<> 대신 setOf
+        when { //when은 swich와 비슷
+            "orange" in items -> println("juicy")
+            "apple" in items -> println("apple is fine too")
+        }
+
+        val fruits = listOf("banana" , "avocado", "apple" , "kiwifruit")
+        fruits
+                .filter { it.startsWith("a") }
+                // filter : 데이터 필터 가능. startsWith :시작하는 단어 설정 가능. a로 시작하는 단어인 filter만 남고 버려진다
+                .sortedBy { it }
+                // sortedBy : 데이터 정렬 : abcd 순서로 정렬.  현재 "avocado", "apple" 둘 남아있는 상태에서 apple 이 앞으로 온다
+                .map { it.toUpperCase() }   //
+                .forEach { println(it) }       //
     }
 
     //6 when
