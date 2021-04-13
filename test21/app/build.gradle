@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    //코틀린 import 설정 추가 // sync now 클릭
+    id 'kotlin-android-extensions'
 }
 
 android {
