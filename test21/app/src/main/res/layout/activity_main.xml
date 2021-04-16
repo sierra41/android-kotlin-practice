@@ -7,183 +7,32 @@
 
     tools:context=".MainActivity">
 
-    <!-- 5.FrameLayout에서  layout_gravity 쓰기
-    android:layout_gravity="center" //가운데로
-    FrameLayout의 부모는 View임. View가 최상단. 에뮬레이터 자체화면
-    그래서 layout_gravity을 줄려면  layout_width layout_height 을 줄여서 실험
-        -->
     <!--
-    6. @+id는 id를 추가하겠다는 의미
-    7.글자크기는 textSize. 단위는 sp 써야함. 화면에서 글자크기를 바꾸면 바뀌어야하기 때문에
-    7-1 글자크기를 텍스트 상자크기에 자동으로 맞추고 싶으면
-         android:autoSizeTextType="uniform"
-        자동으로 최소/ 최대 맞추기
-         android:autoSizeMaxTextSize="40sp"
-         android:autoSizeMinTextSize="20sp"
+    23. 커스텀 버튼
+           drawable 폴더 우클릭 > new > drawable resource file > 파일명(전부소문자)
 
-    8. 배경색 :android:background="#8BC34A"
-     값은 #fff 쓰고 오른쪽 행번호옆 색깔 클릭하면 변경가능
-    색깔을 따로 만들 수도 있음.
-    #8BC34A(앞에 FF생략됨. FF8BC34A)를 만든다고 하면
-    8-1. 메뉴에서 values/colors.xml에서 name 만들고 추가.
-    8-2.  android:background="@color/testAddColoer" 방식으로 참조하여 사용
-    8-3. 이미지도 첨부가능(이미지는 png가 대중적이라 좋음)
-    mipmap 폴더의 ic_launcher.xml사진을 가지고 보면     @mipmap/사진 으로 가능
-    android:background="@mipmap/ic_launcher"
-
-    9. mipmap폴더에 사진을 추가하고 싶으면 해당 사진을 ctrl클릭하며 mipmap폴더에 넣어주고 사용
-       9-1 복사안하고 그냥 끌어다놓으면 원본파일 잘라서 넣는 방식이 되어버림
-       9-2 사진명은 대문자x 숫자로시작x
-           영어소문자로시작+ 숫자/언더바(_)만 가능
-    10. drawable : 텍스트 상자 안에서 이미지를 특정 위치에 띄울 수 있음
-        10-1. top/bottom/left/right 가능. start/end는 쓰지않음
-        10-2. android:drawableTop="@mipmap/ic_launcher"
-        10-3. drawablePadding : 들어간 이미지 간격도 조절 가능
-               android:drawablePadding="20dp"
-        10-4. drawableTint  : 사진의 색깔조절가능
-                android:drawableTint="#802893DC"
-        10-5. drawableTintMode : add -원래 사진과 tint 색깔을 더하거나
-               android:drawableTintMode="add"
-                           multiply -곱하거나
-                           screen -더하는데 더 밝거나
-                               등이 있다
-       10-6. drawable 폴더에 사진 추가 : mipmap폴더와 같은 방식.
-        원래 사진은 drawable에 넣어야함
-       사이즈조절 : 파일명 우클릭 > new file > ok
-                    > 파일명(전부소문자, _).xml  : xml 적어줘야함
-                    > 해당 xml 들어가서 전부작성
-     11. 링크설정 text에 링크를 입력하고
-        11-1-1     android:autoLink="web" 설정을 준다 (웹주소 참조)
-             : 처음 클릭하면 접근권한설정 > 구글 sign in > 두번째시도부터는 바로 진입
-        11-1-2        android:autoLink="email"
-              :  메일 전송으로 연결됨 됨
-        11-1-3       android:autoLink="phone"
-                : 국제전화 형식을 따라함 +82-10-1234-5678
-                : 클릭시 연락처저장가능
-        11-1-4       android:autoLink="map"
-                : 미국 주소만 가능 (한국주소 안됨)
-                :클릭시 구글맵이 켜짐
-                : 구글에 한국 주소를 입력 후 구글맵 주소를 넣고 android:autoLink="web" 참조로 가능
-        11-1-5       android:autoLink="phone|web"
-                : 중복도 가능 중간에 \n을 넣어서
-        11-1-5       android:autoLink="all" : 전부가능
-        11-1-6       android:autoLink="none" : 전부불가
-
-        11-2 text 링크 컬러 : value/colors.xml 의 colorAccent 참조함. 해당 부분을 바꿔주거나
-                android:textColorLink="#FF1414" 로 설정가능
-        11-3    android:linksClickable="false" 로 클릭 비활성화 가능
-
-    12 에뮬레이터 한글 설정
-        바탕화면 > 설정 > 시스템  > languages Input > add a language > korea
-
-    13. 그림자
-        android:translationZ="10dp" : 앞으로 그림자처럼 나오게 함
-        android:background="#fff"
-
-        android:translationY="10dp" : 위부터 떨어지게 함
-        android:elevation="10dp"  : 위쪽을 그림자처럼 나오게함
-
-     14. 텍스트 그림자
-        android:shadowColor="" 그림자 색깔
-        android:shadowDx="5" x쪽 그림자
-        android:shadowDy="5" y쪽 그림자
-        android:shadowRadius="5" 그림자 깊이이
-
-    15, android:autoSizeTextType="uniform" 를 쓰면 텍스트상자에따라 텍스트 크기가 바뀌는데
-        android:autoSizeStepGranularity="5sp" 를 쓰면 커지는 간격을 조절 가능
-
-    16. 대소문자
-            android:textAllCaps="true" : 소문자로 써진 영문자를 대문자로
-
-    17. foreground
-            android:foreground="@color/black" : bakeground와 다르게 색깔이 텍스트를 가림. 텍스트 앞쪽에 위치
-                투명도도
-    18. text 설정
-        18-1 textColor : 색변경
-        18-2 textStyle : bole/italic  등 설정
-        18-3 fontFamily : 글씨체 가능
-            새 폰트 설정 : res우클릭 > new directory > 소문자로 font : 컨트롤로 해당 폴더 끌어다 놓기
-            단, 폰트명은 전부 소문자
-
+    24. android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        값을 고정하면
+        padding은 잘림
                 -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"
+        android:text="Button"
+        android:background="@drawable/custom_button"
+        android:drawableLeft="@drawable/black_right"
+        android:drawablePadding="10dp"
+        android:paddingHorizontal="30dp"
+        android:textColor="#FFED7B"
 
-    <TextView
-        android:layout_width="304dp"
-        android:layout_height="197dp"
-        android:id="@+id/tv"
-        android:translationZ="10dp"
-        android:background="#fff"
-        android:elevation="10dp"
-        android:translationY="10dp"
-
-        android:autoSizeTextType="uniform"
-        android:autoSizeStepGranularity="5sp"
-
-        android:foreground="@color/black"
-        android:textAllCaps="true"
-        android:onClick="DDuck"
-        android:textSize="40sp"
-        android:text="텍스트"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:outlineProvider="bounds"
 
 
         />
-
-
-    <!-- 0.  <Button
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="버튼"
-       android:id="@+id/btn"/>-->
-    <!-- <TextView
-      1. margin 바깥 여백 조절
-         android:layout_margin="50dp" 상하좌우 50 씩 띄우기
-         android:layout_marginTop="50dp"  상단 50 띄우기
-         기타
-         android:layout_marginRight="50dp" 오른쪽
-         android:layout_marginLeft="50dp"  왼쪽
-         android:layout_marginBottom="50dp"  아래쪽
-         android:layout_marginHorizontal="" 상하좌우
-         android:layout_marginVertical="" 는 상하좌우
-         등 도 있음
-         단,
-         android:layout_marginStart=""
-         android:layout_marginEnd=""
-         start/ end 는 예전버전이라 못씀
-
-      2. padding :  텍스스 상자 안에있는 내용을 띄움
-        android:padding="50dp"
-        top/bottom/right/left/vertical/horizontal 등 사용가능
-        start/end 는 예전버전
-
-     3. layout_gravity : 엑자형식 구조로 전체를 나누고 상자위치를 조정
-        LinearLayout 에서는 상하밖에 안되므로
-        framelayout 으로 바꿔줘야함
-
-        android:layout_gravity="center" 프레임 레이아웃의 중앙에 위치
-        android:layout_gravity="end"  가로로봤을 때 왼쪽 right와 같음
-        android:layout_gravity="start" 가로로봤을 때 왼쪽 left와 같음
-        left right보다 end start 쓰기를 추천
-
-        top/bottom 아래쪽 위쪽
-        center_horizontal : 수평으로 봤을 때 중앙
-        center_vertical : 수직으로 봤을 때 중앙
-        clip, fill은 잘 안씀
-
-        중복해서 쓸 수 있음. 유용함
-        android:layout_gravity="end|center_vertical"
-
-
-     4. gravity: 텍스트 상자 안에서 텍스트의 위치를 조정
-        android:gravity="center" : 텍스트 상자에서 가운데
-        top/bottom/start/end/left/right  위쪽 아래쪽 왼쪽 오른쪽 왼쪽 오른쪽
-        center_horizontal : 수평으로 봤을 때 중앙
-        center_vertical : 수직으로 봤을 때 중앙
-        left right보다 end start 쓰기를 추천
-         />
-
-        -->
-
-
 
 
 

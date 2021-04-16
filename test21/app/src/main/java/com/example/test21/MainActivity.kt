@@ -1,9 +1,7 @@
 package com.example.test21
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,13 +13,20 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "toast!", Toast.LENGTH_SHORT).show() //토스트 띄우기
         }*/
 
+        /*20. 버튼 visibility 설정
+       btn.visibility = View.INVISIBLE */
+        /*21. 버튼 enable
+        btn.isEnabled =   false
+        btn.isClickable =   false*/
+
+
     }
 
-    fun DDuck (v : View){  //view 가져오기
-       /* println("뚝!")*/
+    /*fun DDuck (v : View){  //view 가져오기
+       *//* println("뚝!")*//*
         tv.text = "뚝"  // text 변경
 
-    }
+    }*/
 
 
 }
