@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn"
         android:text="Button"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/custom_button_selector"
         android:drawableLeft="@drawable/black_right"
         android:drawablePadding="10dp"
         android:paddingHorizontal="30dp"

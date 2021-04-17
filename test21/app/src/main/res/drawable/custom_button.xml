@@ -1,40 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-모양변경 selector > shape
 
-    android:shape="rectangle : 사각
-
--->
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
-
-    <solid android:color="#18D9EC"/>
-    <!--android:bottomLeftRadius="30dp"
-        android:bottomRightRadius="30dp"
-        android:topLeftRadius="30dp"
-        android:topRightRadius="30dp" -->
-    <corners
-        android:radius="30dp" />
-    <size
-        android:height="70dp"
-        android:width="200dp" />
-    <stroke android:width="3dp"
-            android:color="#1D69C5"
-            android:dashWidth="20dp"
-            android:dashGap="3dp"        />
-    <padding android:bottom="20dp" />
-    <gradient
-        android:startColor="@color/teal_200"
-        android:centerColor="@color/purple_200"
-        android:endColor="@color/testAddColoer"
-        android:angle="405"
-        
-        android:gradientRadius="50dp"
-        android:centerX="1"
-        android:type="radial"
-        />
-        <!--
-        centerX : 0 왼쪽, 1: 오른쪽, 0.5 : 중간
+<!--android:shape="oval" : 타원  , android:shape="ring"  비워진 원,  android:shape="line" :선
+     shape를 중첩하고 싶으면
+        drawable 우클릭 > new resource file > 파일명(custom_layer_list)
+ -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="line">
+    <stroke android:color="@color/design_default_color_primary_dark" android:width="30dp" />
 
 
-        -->
 </shape>
