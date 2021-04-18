@@ -7,34 +7,4 @@
 
     tools:context=".MainActivity">
 
-    <!--
-    23. 커스텀 버튼
-           drawable 폴더 우클릭 > new > drawable resource file > 파일명(전부소문자)
-
-    24. android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        값을 고정하면
-        padding은 잘림
-                -->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn"
-        android:text="Button"
-        android:background="@drawable/custom_button_selector"
-        android:drawableLeft="@drawable/black_right"
-        android:drawablePadding="10dp"
-        android:paddingHorizontal="30dp"
-        android:textColor="#FFED7B"
-
-        android:textSize="30sp"
-        android:layout_gravity="center"
-        android:outlineProvider="bounds"
-
-
-        />
-
-
-
-
 </FrameLayout>
