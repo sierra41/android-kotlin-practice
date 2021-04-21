@@ -1,8 +1,11 @@
 package com.example.test21
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -47,7 +50,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun Login(v : View) {
-        println("성공")
+        /*키보드 숨기기*/
+        /*INPUT_METHOD_SERVICE ( 입력함수를 관리하는 서비스 ) 를 가져와서 InputMethodManager 로 변환
+        * hideSoftInputFromWindow : 키보드 내리기
+        * showSoftInputFromWindow : 키보드 올리기 */
+        var imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(v.windowToken, 0)
+
+
+        /*println("성공")*/
+        /*로그인 입력정보 비교*/
+        if(et_email.text.toString() == "test21@gmail.com"
+                && et_password.text.toString() == "1234"
+                && et_name.text.toString() == "코틀린"
+                && et_age.text.toString() == "25")
+            Toast.makeText(this, "로그인성공!", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(this,"로그인실패ㅜ",Toast.LENGTH_SHORT).show()
+
     }
 
 }
