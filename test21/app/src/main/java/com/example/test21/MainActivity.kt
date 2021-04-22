@@ -7,6 +7,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_java.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -45,7 +46,16 @@ class MainActivity : AppCompatActivity() {
             /*Login(v)
             true*/
 
+
         }
+
+        //자동로그인 불러오기
+        var pref = this.getPreferences(0)
+        et_email.setText(pref.getString("이메일", ""))   /*text를 쓰면 오류*/
+        et_password.setText(pref.getString("비밀번호", ""))
+        et_name.setText(pref.getString("이름", ""))
+        et_age.setText(pref.getString("나이", ""))
+
 
     }
 
@@ -59,13 +69,36 @@ class MainActivity : AppCompatActivity() {
 
 
         /*println("성공")*/
-        /*로그인 입력정보 비교*/
+        /*로그인 입력정보 비교 :해당부분을 파이어베이스와 같은 디비와 같으면 연결됨*/
         if(et_email.text.toString() == "test21@gmail.com"
                 && et_password.text.toString() == "1234"
                 && et_name.text.toString() == "코틀린"
-                && et_age.text.toString() == "25")
+                && et_age.text.toString() == "25") {
             Toast.makeText(this, "로그인성공!", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(this,"로그인실패ㅜ",Toast.LENGTH_SHORT).show()
+
+            /*로그인 성공 후 다음 페이지 이동
+            - activity_java로 이동해봄. 기본적으로 layout으로만 이동하지는 못하므로 JavaActivity로 이동
+            ::이 두개 = class.java (단 class.kotlin은 없음 kotlin도 java로 불러옴)
+
+            */
+            setContentView(R.layout.activity_java)
+            tv_result.text = "코틀린님 환영합니다"
+            //startActivity(Intent(this, JavaActivity::class.java))
+            //intent.putExtra("이름", "코틀린")
+            //startActivity(intent)
+
+            //if(intent.hasExtra("이름")) tv_result.text = intent.getStringExtra("이름") + "환영합니다다"
+
+            /*자동로그인 저장*/
+            var editor =  this.getPreferences(0).edit()
+            editor.putString("이메일","test21@gmail.com").apply()
+            editor.putString("비밀번호","1234").apply()
+            editor.putString("이름","코틀린").apply()
+            editor.putString("나이","25m").apply()
+
+
+       }
+            else Toast.makeText(this,"로그인실패ㅜ",Toast.LENGTH_SHORT).show()
 
     }
 
