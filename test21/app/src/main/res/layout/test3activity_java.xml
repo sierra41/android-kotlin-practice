@@ -6,5 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".JavaActivity">
 
-
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="로그인 성공 후 다음 페이지" />
 </FrameLayout>
