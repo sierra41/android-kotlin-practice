@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--item 속성 : android:width="50dp" android:height="100dp"-->
+    <item >
+        <shape android:shape="rectangle">
+            <solid android:color="@color/design_default_color_primary_dark"/>
+
+        </shape>
+
+    </item>
+
+    <!--item 속성 : android:width="50dp" android:height="50dp" android:gravity="center"
+                 android:top="20dp" android:bottom="20dp" android:right="20dp" android:left="20dp"
+    -->
+
+<!--    <item android:drawable="@drawable/black_right">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/material_on_primary_emphasis_medium"/>
+        </shape>
+            </item>-->
+    <item android:drawable="@drawable/black_right"/>
+    <!--layer list는 아래쪽이 우선순위임-->
+
+
+
+</layer-list>
