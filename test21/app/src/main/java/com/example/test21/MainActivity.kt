@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +28,20 @@ class MainActivity : AppCompatActivity() {
             }
 
         })*/
+        Click(btn_1)
+    }
 
+    fun Click(v: View){
+        iv_1.visibility_ = View.INVISIBLE
+        iv_2.visibility_ = View.INVISIBLE
+
+        iv_3.visibility_ = View.INVISIBLE
+
+        when(v) {
+            btn_1 -> iv_1.visibility = View.VISIBLE
+            btn_2 -> iv_2.visibility = View.VISIBLE
+            btn_3 -> iv_3.visibility = View.VISIBLE
+        }
     }
 
     fun LoadImage(v : View){

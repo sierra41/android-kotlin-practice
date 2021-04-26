@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:onClick="Click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼1"
+            android:id="@+id/btn_1"
+            />
+        <Button
+            android:onClick="Click"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼2"
+            android:id="@+id/btn_2"
+            />
+        <Button
+            android:onClick="Click"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼3"
+            android:id="@+id/btn_3"
+            />
+    </LinearLayout>
+
+    <!--프레임레이아웃은 이미지겹침, 리니어레이아웃은 안겹침-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        <ImageView
+            android:id="@+id/iv_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            />
+        <ImageView
+        android:id="@+id/iv_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_dark_background"
+        />
+        <ImageView
+        android:id="@+id/iv_3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/design_default_color_primary_dark"
+        />
+
+        />
+    <!--    1. android:background="@null" : 한 줄이 보이지 않음
+        2. android:maxLength="10" : 최대 길이 설정-->
+    <!--<EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:maxLength="10"
+        />-->
+
+    <!-- 이미지뷰 비율일정
+         android:src="@null "
+-->
+<!--    <ImageView
+        android:src="@color/design_default_color_primary"
+        android:scaleType="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />-->
+
+    <ImageView
+        android:id="@+id/iv_basic"
+        android:scaleType="center"
+        android:src="@drawable/example_resize"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:onClick="LoadImage"
+
+        />
+
+</LinearLayout>
