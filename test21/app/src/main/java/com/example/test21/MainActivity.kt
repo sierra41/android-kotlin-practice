@@ -1,9 +1,9 @@
 package com.example.test21
 
-import android.content.Intent
 import android.os.Bundle
-import android.provider.MediaStore
-import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -28,10 +28,18 @@ class MainActivity : AppCompatActivity() {
             }
 
         })*/
-        Click(btn_1)
+        //Click(btn_1)
+
+        val item = arrayOf("0번", "1번", "2번", "3번", "4번", "5번", "6번", "7번", "8번", "9번", "10번")
+        listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,item)
+
+        listView.onItemClickListener = AdapterView.OnItemClickListener{parent, view, position, id ->
+            val selectItem = parent.getItemAtPosition(position)
+            Toast.makeText(this, selectItem.toString(), Toast.LENGTH_SHORT).show()
+        }
     }
 
-    fun Click(v: View){
+    /*fun Click(v: View){
         iv_1.visibility_ = View.INVISIBLE
         iv_2.visibility_ = View.INVISIBLE
 
@@ -52,6 +60,6 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data : Intent?)
 
         if(data != null)
-    }
+    }*/
 
 }
