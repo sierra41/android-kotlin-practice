@@ -1,13 +1,23 @@
 package com.example.test21
 
 import android.os.Bundle
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+   /* var DataList = arrayListOf(
+            Data(R.drawable.example_resize, "0번"),
+            Data(R.drawable.example_resize, "1번"),
+            Data(R.drawable.example_resize, "2번"),
+            Data(R.drawable.example_resize, "3번")
+
+    )*/
+    /*단 Listview는 수가 많아지면 한꺼번에 다 출력을 해야하기 때문에 속도가 느려지는 단점이 있음.
+
+    * 이를 대신해서 사용되는게 recyclerViewdla.
+    한꺼번에 다 출력되는게 아니라 위에서 사용된 리스트를 밑에서 재활용하는 방식.*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +40,25 @@ class MainActivity : AppCompatActivity() {
         })*/
         //Click(btn_1)
 
-        val item = arrayOf("0번", "1번", "2번", "3번", "4번", "5번", "6번", "7번", "8번", "9번", "10번")
+        /*val item = arrayOf("0번", "1번", "2번", "3번", "4번", "5번", "6번", "7번", "8번", "9번", "10번")
         listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,item)
 
         listView.onItemClickListener = AdapterView.OnItemClickListener{parent, view, position, id ->
             val selectItem = parent.getItemAtPosition(position)
-            Toast.makeText(this, selectItem.toString(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, selectItem.toString(), Toast.LENGTH_SHORT).show()*/
+
+
+
+        /*listView.adapter = CustomAdapter(this, DataList)
+
+         listView.onItemClickListener = AdapterView.OnItemClickListener{ parent, view, position, id ->
+         val selectItem = parent.getItemAtPosition(position) as Data
+         Toast.makeText(this, selectItem.name, Toast.LENGTH_SHORT).show()*/
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+
+
         }
     }
 
