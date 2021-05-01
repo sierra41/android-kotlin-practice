@@ -7,16 +7,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <!--android:text="스위치   "
+       tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="634dp"-->
+<!--
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:thumb="@drawable/example_resize"
+        android:track="@drawable/abc_vector_test"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />-->
 
-        <androidx.viewpager.widget.ViewPager
+       <!-- <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            layout_constraintTop_toTopOf="@+id/viewPager"
-            layout_constraintEnd_toEndOf="parent"
-            layout_constraintStart_toStartOf="parent"     >
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tabLayout3">-->
 
-            <com.google.android.material.tabs.TabLayout
+            <!--<com.google.android.material.tabs.TabLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -34,15 +50,49 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Wednesday" />
-            </com.google.android.material.tabs.TabLayout>
-        </androidx.viewpager.widget.ViewPager>
+            </com.google.android.material.tabs.TabLayout>-->
+    <!--    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout_constraintTop_toTopOf="parent"
+        layout_constraintEnd_toEndOf="parent"
+        layout_constraintStart_toStartOf="parent"
+        >
+    </com.google.android.material.tabs.TabLayout>-->
    <!-- <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listView"
-        />-->
-   <!-- <androidx.recyclerview.widget.RecyclerView
+        />--><!--
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
+        android:layoidth="match_parent"
         android:layout_height="match_parent" />-->
+
+<!--   &lt;!&ndash; <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="411dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hint" />
+    </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;
+
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="182dp"
+        tools:layout_editor_absoluteY="465dp"
+        tools:srcCompat="@tools:sample/avatars" />-->
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
