@@ -49,6 +49,13 @@
        android:text="Button"
        tools:layout_editor_absoluteX="226dp"
        tools:layout_editor_absoluteY="46dp" />
+ <!--  <Button
+       android:id="@+id/btn1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Button"
+       tools:layout_editor_absoluteX="226dp"
+       tools:layout_editor_absoluteY="46dp" />
 
    <Button
        android:id="@+id/btn2"
@@ -56,14 +63,29 @@
        android:layout_height="wrap_content"
        android:text="Button"
        tools:layout_editor_absoluteX="74dp"
-       tools:layout_editor_absoluteY="47dp" />
+       tools:layout_editor_absoluteY="47dp" />-->
 
-   <FrameLayout
+  <!-- <FrameLayout
+       android:id="@+id/frameLayout"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:layout_marginTop="96dp"
        app:layout_constraintTop_toTopOf="@+id/btn"
        tools:layout_editor_absoluteX="32dp">
 
+   </FrameLayout>-->
+
+   <!--incloude-->
+   <FrameLayout
+       android:id="@+id/frameLayout"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="96dp"
+       app:layout_constraintTop_toTopOf="@+id/btn"
+       tools:layout_editor_absoluteX="32dp">
+      <include
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          />
    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
