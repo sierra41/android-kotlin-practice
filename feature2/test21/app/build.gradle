@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.test21"
-        minSdkVersion 16
+        minSdkVersion 16 //23 //16
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -33,6 +33,14 @@ android {
         jvmTarget = '1.8'
     }
 }
+/*추가*/
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'http://jitpack.io'}
+    }
+}
 
 dependencies {
 
@@ -44,4 +52,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    /*추가*/
+    implementation 'com.github.gayanvoice:android-animations-kitlin:1.1'
 }

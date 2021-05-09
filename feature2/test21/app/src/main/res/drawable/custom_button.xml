@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--android:shape="oval" : 타원  , android:shape="ring"  비워진 원,  android:shape="line" :선
+     shape를 중첩하고 싶으면
+        drawable 우클릭 > new resource file > 파일명(custom_layer_list)
+ -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="line">
+    <stroke android:color="@color/design_default_color_primary_dark" android:width="30dp" />
+
+
+</shape>
